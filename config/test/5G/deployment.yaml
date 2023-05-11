@@ -27,12 +27,12 @@ spec:
     spec:
       containers:
       - name: corekube-worker
-        image: andrewferguson/corekube5g-worker:latest
+        image: andrewferguson/corekube5g-worker2:latest
         ports:
         - containerPort: 5566
           protocol: UDP
           name: worker-s1ap
-        command: ["./corekube_udp_worker", "$(THIS_POD_IP)", "$(COREKUBE_DB_SERVICE_HOST)", "0"]
+        command: ["./corekube_udp_worker", "$(THIS_POD_IP)", "$(COREKUBE_DB_SERVICE_HOST)", "6", "1"]
         env:
         - name: THIS_POD_IP
           valueFrom:
